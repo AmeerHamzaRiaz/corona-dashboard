@@ -23,7 +23,7 @@ const DoughnutChart = ({ dataSet }) => {
     return (
 
         <Paper className={classes.paper} elevation={3}>
-            <Typography variant="h6" component="h6" align="left" color="textPrimary">Infection Summary</Typography>
+            <Typography variant="h6" component="h6" align="left" color="textPrimary">Most Affected Countries</Typography>
             {
                 isLoading ?
                     <Box
