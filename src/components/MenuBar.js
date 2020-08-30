@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const MenuBar = ({ gridTableData }) => {
+const MenuBar = ({ resource }) => {
     const { setData, globalData, setSelectedCountry } = useContext(GlobalContext);
-
+    const gridTableData = resource.fetchSummary.read().Countries;
     const classes = useStyles();
     const options = gridTableData.map((option) => {
         const firstLetter = option.Country[0].toUpperCase();

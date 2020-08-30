@@ -1,7 +1,9 @@
 import React from 'react'
 import MUIDataTable from "mui-datatables";
 
-const GridTable = ({ gridTableData }) => {
+const GridTable = ({ resource }) => {
+
+    const gridTableData = resource.fetchSummary.read().Countries;
 
     const columns = [
         {

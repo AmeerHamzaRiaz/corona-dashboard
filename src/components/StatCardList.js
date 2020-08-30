@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import StatCardItem from './StatCardItem'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import { GlobalContext } from '../context/GlobalState';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -11,7 +12,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const StatCardList = ({ cardData }) => {
+const StatCardList = ({ resource }) => {
+
+    useEffect(() => {
+        setData(resource.fetchSummary.read().Global);
+    }, [resource.fetchSummary.read().Global])
+
+    const { cardData, setData } = useContext(GlobalContext);
+
     const classes = useStyles();
 
     return (
