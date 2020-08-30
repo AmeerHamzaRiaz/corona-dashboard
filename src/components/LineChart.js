@@ -3,9 +3,9 @@ import { Line } from 'react-chartjs-2'
 import { GlobalContext } from '../context/GlobalState';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
-import Skeleton from '@material-ui/lab/Skeleton'
 import Box from "@material-ui/core/Box";
 import Typography from '@material-ui/core/Typography'
+import { CircularProgress } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -15,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
         height: '50.5vh'
 
     },
+    loadingBox: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        height: '50vh',
+    }
 }));
 
 
@@ -31,11 +37,10 @@ const LineChart = ({ countryName }) => {
         fetch(`https://api.covid19api.com/total/dayone/country/${countryName}`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                console.log(result)
                 setLineChartData(result)
 
             })
-            .catch(error => console.log('error', error));
+            .catch(error => console.error('error', error));
     }
 
     useEffect(fetchData, [countryName]);
@@ -52,16 +57,15 @@ const LineChart = ({ countryName }) => {
                             display="flex"
                             justifyContent="center"
                             alignItems="center"
-                            // minHeight="100vh"
+                            className={classes.loadingBox}
                         >
-                            <Skeleton variant="circle" height="400px" width="400px" />
+                            <CircularProgress color="secondary" />
                         </Box>
                         :
                         <Box
                             display="flex"
                             justifyContent="center"
                             alignItems="center"
-                            // minHeight="96vh"
                         >
                             <Line data={lineChartData} />
                         </Box>

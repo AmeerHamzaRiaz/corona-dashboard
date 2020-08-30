@@ -4,7 +4,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
@@ -49,7 +48,6 @@ const MenuBar = ({ gridTableData }) => {
     });
 
     const onCountrySelectionChange = (value) => {
-        console.log(value)
         if (value) {
             setSelectedCountry(value.Country);
             setData(value);

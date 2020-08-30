@@ -21,7 +21,7 @@ const Footer = () => {
     return (
         <footer className={classes.footer}>
             <p style={{ textAlign: 'center' }}>
-                Developed with 💙 by <b><a className={classes.link} href="https://www.linkedin.com/in/ameerhamzarz/">Ameer Hamza</a></b>
+                Developed with <span role="img" aria-label="heart">💙</span> by <b><a className={classes.link} href="https://www.linkedin.com/in/ameerhamzarz/">Ameer Hamza</a></b>
             </p>
         </footer>
 

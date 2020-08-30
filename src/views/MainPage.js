@@ -30,7 +30,7 @@ const MainPage = () => {
                 countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)
                 setDoughnutChartData(countries.slice(0, 10));
             })
-            .catch(error => console.log('error', error));
+            .catch(error => console.error('error', error));
     }
 
     useEffect(fetchData, []);
@@ -44,7 +44,7 @@ const MainPage = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6} >
                         <Grid item xs={12} md={12}>
-                            <PieChart dataSet={pieChartData} />
+                        <PieChart dataSet={pieChartData} />
                         </Grid>
                         {
                             !selectedCountry &&

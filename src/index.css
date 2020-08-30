@@ -5,10 +5,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-.MuiTableCell-root {
-  font-size: 0.875rem !important;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+  background-color: #ecf0f1 !important
 }
